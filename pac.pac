@@ -1,27 +1,19 @@
 function FindProxyForURL(url, host) {
-	var rules = domain();
-	var n = rules.length;
-	var ret ="";
+	var rules = domain();var n = rules.length;var ret ="";
  for (var i = 0; i < n; i++) 
   {	
       if (host == rules[i] || host.endsWith('.' + rules[i]))
-      //if(dnsDomainIs(host,rules[i]))
-        { 
-            var ret = rules[i]; 
-           break;
-        }
+         { var ret = rules[i];  break; }
   } 
- //if (dnsDomainIs(host, ret ))
  if (host == ret || host.endsWith('.' + ret))
     {
+     //http proxy   
     //return "PROXY 192.168.1.23:10802";
     return "PROXY 192.168.1.116:8080";
+    
     }
- else 
- {
-    return "DIRECT";
-      
-   }
+ else {    return "DIRECT";   }
+	
 function domain(){
 var name_add = [
             "translate.googleapis.com",
