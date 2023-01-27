@@ -1,5 +1,5 @@
-var rules = domain();
 function FindProxyForURL(url, host) {
+	var rules = domain();
 	var n = rules.length;
 	var ret ="";
  for (var i = 0; i < n; i++) 
