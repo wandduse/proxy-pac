@@ -1,4 +1,29 @@
-var rules = [
+var rules = domain();
+function FindProxyForURL(url, host) {
+	var n = rules.length;
+	var ret ="";
+ for (var i = 0; i < n; i++) 
+  {	
+      if (host == rules[i] || host.endsWith('.' + rules[i]))
+      //if(dnsDomainIs(host,rules[i]))
+        { 
+            var ret = rules[i]; 
+           break;
+        }
+  } 
+ //if (dnsDomainIs(host, ret ))
+ if (host == ret || host.endsWith('.' + ret))
+    {
+    //return "PROXY 192.168.1.23:10802";
+    return "PROXY 192.168.1.116:8080";
+    }
+ else 
+ {
+    return "DIRECT";
+      
+   }
+function domain(){
+var name_add = [
             "translate.googleapis.com",
             "google.cn",
             "addyoutube.com",
@@ -5741,28 +5766,7 @@ var rules = [
             "zzcartoon.com",
             "zzcloud.me",
             "zzux.com"
-            ]
-function FindProxyForURL(url, host) {
-	var n = rules.length;
-	var ret ="";
- for (var i = 0; i < n; i++) 
-  {	
-      if (host == rules[i] || host.endsWith('.' + rules[i]))
-      //if(dnsDomainIs(host,rules[i]))
-        { 
-            var ret = rules[i]; 
-           break;
-        }
-  } 
- //if (dnsDomainIs(host, ret ))
- if (host == ret || host.endsWith('.' + ret))
-    {
-    //return "PROXY 192.168.1.23:10802";
-    return "PROXY 192.168.1.116:8080";
-    }
- else 
- {
-    return "DIRECT";
-      
-   }
+            ]	
+	 return name_add;
+	}
 }
