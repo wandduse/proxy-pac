@@ -16,6 +16,9 @@ function FindProxyForURL(url, host) {
 	
 function domain(){
 var name_add = [
+            "csp.withgoogle.com",
+            "safebrowsing.googleapis.com",
+            "translate.google.com",
             "translate.googleapis.com",
             "google.cn",
             "addyoutube.com",
