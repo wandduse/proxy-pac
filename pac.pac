@@ -12,7 +12,7 @@ for (var i = 0; i < n; i++)
   
 if(isInNet(host))
     {
-	return proxy;
+	return "DIRECT";
 }
 else if(host == ret)
 	{
